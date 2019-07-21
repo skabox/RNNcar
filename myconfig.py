@@ -67,7 +67,7 @@ THROTTLE_REVERSE_PWM = 280  #180      #pwm value for max reverse throttle
 # #The DEFAULT_MODEL_TYPE will choose which model will be created at training time. This chooses
 # #between different neural network designs. You can override this setting by passing the command
 # #line parameter --type to the python manage.py train and drive commands.
-DEFAULT_MODEL_TYPE = 'categorical'   #(linear|categorical|rnn|imu|behavior|3d|localizer|latent)
+DEFAULT_MODEL_TYPE = 'rnn'   #(linear|categorical|rnn|imu|behavior|3d|localizer|latent)
 # BATCH_SIZE = 128                #how many records to use when doing one pass of gradient decent. Use a smaller number if your gpu is running out of memory.
 # TRAIN_TEST_SPLIT = 0.8          #what percent of records to use for training. the remaining used for validation.
 # MAX_EPOCHS = 100                #how many times to visit all records of your data
@@ -113,7 +113,7 @@ DEFAULT_MODEL_TYPE = 'categorical'   #(linear|categorical|rnn|imu|behavior|3d|lo
 # #JOYSTICK
 # USE_JOYSTICK_AS_DEFAULT = False     #when starting the manage.py, when True, will not require a --js option to use the joystick
 JOYSTICK_MAX_THROTTLE = 0.6         #this scalar is multiplied with the -1 to 1 throttle value to limit the maximum throttle. This can help if you drop the controller or just don't need the full speed available.
-JOYSTICK_STEERING_SCALE = 0.8       #some people want a steering that is less sensitve. This scalar is multiplied with the steering -1 to 1. It can be negative to reverse dir.
+JOYSTICK_STEERING_SCALE = 0.5       #some people want a steering that is less sensitve. This scalar is multiplied with the steering -1 to 1. It can be negative to reverse dir.
 # AUTO_RECORD_ON_THROTTLE = True      #if true, we will record whenever throttle is not zero. if false, you must manually toggle recording with some other trigger. Usually circle button on joystick.
 # CONTROLLER_TYPE='ps3'               #(ps3|ps4|xbox|nimbus|wiiu|F710)
 # USE_NETWORKED_JS = False            #should we listen for remote joystick control over the network?
